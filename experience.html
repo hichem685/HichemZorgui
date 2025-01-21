@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+    <style>
+       
+
+
+        * {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {    
+    color: white;
+    overflow-x: hidden;
+    font-size: 16px;
+    background-color: #121212; /* Softer black for reduced eye strain */
+    line-height: 1.6;
+    
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff5252;
+    border-bottom: 2px solid #ff5252;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(55, 0, 0, 0.9);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff5252;
+    text-transform: uppercase;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+    .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+    @media (max-width: 480px) {
+      .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: 150px;
+        
+      }
+      
+
+      .card .description {
+        font-size: 0.8rem;
+      }
+      header {
+            padding: 1rem;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 5rem;
+            right: 5%;
+            background: rgba(0, 0, 0, 0.9);
+            width: 80%;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+section{
+    margin-top: 80px;
+}
+        nav.active {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+    .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .card {
+            height: 100%;
+            background-color: #1c1f2b;
+            overflow: hidden;
+            
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff5252;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #d2d2d2;
+        }
+        a{
+            color: gray;
+            text-decoration: underline;
+
+        }
+
+
+
+
+    </style>
+    <link rel="stylesheet" href="style4.css">
+
+</head>
+<body>
+    <header>
+        <a href="" class="logo">Hech</a>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+          <a href="hichem.html">Home</a>
+          <a href="index.html" >Works</a>
+          <a href="experience.html" class="active">Experience</a>
+        </nav>
+      </header>
+      <br><br><br><br>
+      
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="image/img1.jpg" alt=""></div>
+            <div class="item" style="--position: 2"><img src="image/img2.jpg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="image/img3.jpg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="img4.png" alt=""></div>
+            <div class="item" style="--position: 5"><img src="image/img5.jpg" alt=""></div>
+            </div>
+            <br><br><br><br>            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div class="card-container">
+                <div class="card">            
+
+                    <img src="image/img1.jpg" alt="Place 1">
+                    <div class="card-content">
+                        <h3>1</h3>
+                        <p>This association works to educate young people, motivate them socially, and raise their awareness about the issues in their region. I have many partnerships with other associations, where I worked with them and participated in several training courses such as communication techniques and design. I also worked with them as a photographer. I was a member of the Peace Club, which is active within the association.
+                            <br>
+                            <a href="https://www.facebook.com/adesmedenine">Facebook Page</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image/img2.jpg" alt="Place 2">
+                    <div class="card-content">
+                        <h3>2</h3>
+                        <p>
+                            
+                        This is my private page specializing in everything related to design, including logo design, montage, and website design. If you have work that you’d like to showcase, you can share it on this page.
+                            <br><a href="https://www.facebook.com/profile.php?id=100095671620472">Facebook Page</a>
+
+
+
+
+
+
+
+
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="i1" src="image/img3.jpg" alt="Place 3">
+                    <div class="card-content">
+                        <h3>3</h3>
+                        <p>It is an independent cultural association that aims to spread culture in accordance with the teachings of Islam. Among our activities is the main weekly program called "Halaqa", which is divided into two parts. The first part consists of an educational discussion session on a specific topic, where young people learn about the etiquette of a Muslim, such as good neighborly conduct, honoring parents, honesty, and dialogue etiquette. The second part includes recreational and cultural activities, such as crafts, cultural competitions, sports, or intellectual challenges. In addition, we organize other events such as conferences, celebrations, and camps. Currently, youth activities are being held.
+
+
+
+
+
+
+
+                        </p>
+                        <br><a href="https://www.facebook.com/p/شباب-الرابطة-التونسية-للتواصل-والبناء-مدنين-100090815208273/">Facebook Page</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image/img4.png" alt="Place 4">
+                    <div class="card-content">
+                        <h3>4</h3>
+                        <p>I participated with “Ma3an” in many training courses, such as artificial intelligence awareness. I also established a partnership with the Association for Development and Strategic Studies.</p>
+                        <br><a href="https://www.facebook.com/aver.ma3an.medenine">Facebook Page</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image/img5.jpg" alt="Place 5">
+                    <div class="card-content">
+                        <h3>5</h3>
+                        <p>It is a club active at the Higher Institute of Applied Studies in Humanities in Tozeur. It works with education and teaching students and organizes cultural and recreational activities. I work as a designer for this club.
+                        </p>
+                        <br><a href="https://www.facebook.com/profile.php?id=61566471846792">Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

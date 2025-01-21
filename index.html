@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Flex Cards with Images</title>
+  <script>
+    function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+
+  </script>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {    
+      color: white;
+      font-size: 16px;
+      background-color: #121212;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(55, 0, 0, 0.9);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff5252;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-transform: uppercase;
+      padding: 0.5rem;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+
+    nav a:hover,
+    nav a.active {
+      color: #ff5252;
+      border-bottom: 2px solid #ff5252;
+    }
+
+    .wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 1rem 1rem;
+      overflow-y: auto;
+    }
+    section{
+      margin-top: 50px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1 1 calc(33.333% - 1rem);
+      max-width: calc(33.333% - 1rem);
+      height: 250px;
+      
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    }
+
+    .card .description {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+      font-size: 1rem;
+    }
+    .card{
+      margin-top: 70px;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.9);
+        width: 80%;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .container {
+        gap: 0.5rem;
+      }
+
+      .card {
+        flex: 1 1 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: 150px;
+      }
+
+      .card .description {
+        font-size: 0.8rem;
+      }
+      header {
+            padding: 1rem;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 5rem;
+            right: 5%;
+            background: rgba(0, 0, 0, 0.9);
+            width: 80%;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+section{
+    margin-top: 80px;
+}
+        nav.active {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Hech</a>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <a href="hichem.html">Home</a>
+      <a href="index.html" class="active">Works</a>
+      <a href="experience.html">Experience</a>
+    </nav>
+  </header>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Card 1 -->
+      <label for="c1" class="card" style="background-image: url('s1.png');">
+        <div class="description">
+          <h4>Mortal Kombat</h4>
+        </div>
+      </label>
+      <!-- Card 2 -->
+      <label for="c2" class="card" style="background-image: url('s2.png');">
+        <div class="description">
+          <h4>Premier League</h4>
+        </div>
+      </label>
+      <!-- Card 3 -->
+      <label for="c3" class="card" style="background-image: url('s3.png');">
+        <div class="description">
+          <h4>World Cup Qatar 2022</h4>
+        </div>
+      </label>
+      <!-- Card 4 -->
+      <label for="c4" class="card" style="background-image: url('s4.png');">
+        <div class="description">
+          <h4>Fortnite</h4>
+        </div>
+      </label>
+      <!-- Card 5 -->
+      <label for="c5" class="card" style="background-image: url('s5.png');">
+        <div class="description">
+          <h4>Cristiano Ronaldo</h4>
+        </div>
+      </label>
+      <!-- Card 6 -->
+      <label for="c6" class="card" style="background-image: url('s6.png');">
+        <div class="description">
+          <h4>Iphone</h4>
+        </div>
+      </label>
+      <!-- Card 7 -->
+      <label for="c7" class="card" style="background-image: url('s7.png');">
+        <div class="description">
+          <h4>Instagram</h4>
+        </div>
+      </label>
+      <!-- Card 8 -->
+      <label for="c8" class="card" style="background-image: url('s8.png');">
+        <div class="description">
+          <h4>Calculator</h4>
+        </div>
+      </label>
+      <!-- Card 9 -->
+      <label for="c9" class="card" style="background-image: url('s9.png');">
+        <div class="description">
+          <h4>Mortal kombat</h4>
+        </div>
+      </label>
+    </div>
+  </div>
+</body>
+</html>
